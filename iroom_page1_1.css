@@ -1,0 +1,4 @@
+body{ height:auto; min-height:100%; margin:0; padding:0; background-color:#996600; overflow:auto;} /* to remove the top and left whitespace */   
+img { position:absolute; top:30px; left:35px; }
+
+canvas { overflow:auto; }
