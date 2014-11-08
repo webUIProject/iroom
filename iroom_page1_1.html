@@ -13,18 +13,36 @@
    
    
    <body>
-       <canvas id="myCanvas"></canvas>   
-       <img src="iroom_logo.png" alt="iroom logo" style="width:168px;height:50px">
+      <div id="canvas-wrap">
+      
+       <canvas id="myCanvas">
+        </canvas> 
+          
+        <div1 id="overlay1">click1</div1>
+        <div1 id="overlay2">click2</div1>
+        <div1 id="overlay3">click3</div1>
+        
+        <div1 id="overlay4">click4</div1>
+        <div1 id="overlay5">click5</div1>
+        <div1 id="overlay6">click6</div1>
+        
+        <div1 id="overlay7">click7</div1>
+        <div1 id="overlay8">click8</div1>
+        <div1 id="overlay9">click9</div1>
+
+        </div>
+        
+        
+       <img src="iroom_logo.png" alt="iroom logo">
+       
        
        
        
     <script>
-        // generating canvas
         var canvas = document.getElementById("myCanvas");
         canvas.width = 1500;
         canvas.height = 1000;
         
-        // rect
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = '#7C5300';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -54,6 +72,7 @@
             
             for (var i = 1; i < sides; i++) {
                 ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
+                //ctx.lineJoin = 'round';
             }
         
             ctx.closePath();
@@ -82,6 +101,8 @@
             ctx.fill();
             ctx.strokeStyle = '#CFA653';
             ctx.lineWidth = 7;
+            //ctx.lineCap = 'round';
+            //ctx.lineJoin = 'round';
             ctx.stroke();
             // rect
             //ctx.fillStyle = '#B5B2A9';
@@ -127,13 +148,15 @@
         Hexagon(520, 250, 1);
         Hexagon(450, 530, 2);
         
-        //Hexagon(727, 450, 3);
+        Hexagon(727, 450, 3);
         Hexagon(173, 610, 0);
         Hexagon(657, 731, 0);
         
         Hexagon(934, 651, 0);
-        //Hexagon(1004, 371, 3);
-        //Hexagon(380, 810, 3);
+        Hexagon(1004, 371, 3);
+        Hexagon(380, 810, 3);
+
+
 
 
                 
