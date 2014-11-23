@@ -3,9 +3,15 @@ var router = require("./iroomRouter01");
 var requestHandlers = require("./iroomRequestHandlers01");
 
 var handle = {}
-handle["/"] = requestHandlers.start;
-handle["/start"] = requestHandlers.start;
-handle["/upload"] = requestHandlers.upload;
-handle["/show"] = requestHandlers.show;
+handle["/"] = requestHandlers.iroomHTML;
+handle["/iroomPage01.html"] = requestHandlers.iroomHTML;
+handle["/iroomPage01.css"] = requestHandlers.iroomCSS;
+handle["/iroomLogo.png"] = requestHandlers.iroomLOGO;
+
+
+//handle["/upload"] = requestHandlers.upload;
+//handle["/show"] = requestHandlers.show;
+
+
 
 server.start(router.route, handle);

@@ -2,36 +2,78 @@ var querystring = require("querystring"),
     fs = require("fs"),
     formidable = require("formidable");
 
-function start(response) {
-    console.log("Request handler 'start' was called.")
-    
-    //fs = require('fs')
+
+
+
+function iroomHTML(response) {
+    console.log("Request handler 'iroomHTML' was called.")
     fs.readFile('./iroomPage01.html', 'utf8', function (err,data) {
         if (err) {
             return console.log(err);
         }
+        response.writeHead(200, {"Content-Type": "text/html"});
         response.write(data);
         response.end();
     });
+}
+       
+
+function iroomCSS(response){
+    console.log("Request handler 'iroomCSS' was called.")
+    fs.readFile('./iroomPage01.css', function (err, data) {
+        if (err) {
+            return console.log(err);
+        }
+        response.writeHead(200, {'Content-Type': 'text/css'});
+        response.write(data);
+        response.end();
+      });  
+}
+
+
+function iroomLOGO(response){
+    console.log("Request handler 'iroomLOGO' was called.")
+    fs.readFile('./iroomLogo.png', "binary", function (err, file) {
+        if (err) {
+            return console.log(err);
+        }
+        response.writeHead(200, {'Content-Type': 'image/png'});
+        response.write(file, "binary");
+        response.end();
+      });  
+}
+
+
+
+        
+        
     
+        //self.app.use("css", express.static('./iroomPage01.css'));
     
     
     
     
     /*
-    var content;
-    fs.readFile('./iroomPage01.5.html', function read(err, data) {
+     fs.readFile('./iroomPage01.css', 'utf8', function (err,data) {
         if (err) {
-            throw err;
+            return console.log(err);
         }
-        content = data;
-        
+        response.writeHead(200, {"Content-Type": "text/css"});
         response.write(data);
         response.end();
-        
-        console.log(content);   // Put all of the code here (not the best solution)
+    });
+    
+     fs.readFile('./iroomLogo.png', 'utf8', function (err,data) {
+        if (err) {
+            return console.log(err);
+        }
+        response.writeHead(200, {"Content-Type": "image/png"});
+        response.write(data);
+        response.end();
     });
     */
+    
+
  
     /*
     var body =   
@@ -53,7 +95,7 @@ function start(response) {
     response.write(body);
     response.end();
     */
-}
+
 
 function upload(response, request) {
   console.log("Request handler 'upload' was called.");
@@ -85,6 +127,8 @@ function show(response) {
   });
 }
 
-exports.start = start;
-exports.upload = upload;
-exports.show = show;
+exports.iroomHTML = iroomHTML;
+exports.iroomCSS = iroomCSS;
+exports.iroomLOGO = iroomLOGO;
+//exports.upload = upload;
+//exports.show = show;
