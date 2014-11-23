@@ -3,11 +3,9 @@ var querystring = require("querystring"),
     formidable = require("formidable");
 
 
-
-
 function iroomHTML(response) {
-    console.log("Request handler 'iroomHTML' was called.")
-    fs.readFile('./iroomPage01.html', 'utf8', function (err,data) {
+    console.log("Request handler 'iroomHTML' was called.");
+    fs.readFile('./iroomPage01.1.html', 'utf8', function (err,data){
         if (err) {
             return console.log(err);
         }
@@ -16,11 +14,9 @@ function iroomHTML(response) {
         response.end();
     });
 }
-       
-
 function iroomCSS(response){
-    console.log("Request handler 'iroomCSS' was called.")
-    fs.readFile('./iroomPage01.css', function (err, data) {
+    console.log("Request handler 'iroomCSS' was called.");
+    fs.readFile('./iroomPage01.css', function (err, data){
         if (err) {
             return console.log(err);
         }
@@ -29,11 +25,9 @@ function iroomCSS(response){
         response.end();
       });  
 }
-
-
 function iroomLOGO(response){
-    console.log("Request handler 'iroomLOGO' was called.")
-    fs.readFile('./iroomLogo.png', "binary", function (err, file) {
+    console.log("Request handler 'iroomLOGO' was called.");
+    fs.readFile('./iroomLogo.png', "binary", function (err, file){
         if (err) {
             return console.log(err);
         }
@@ -44,59 +38,7 @@ function iroomLOGO(response){
 }
 
 
-
-        
-        
-    
-        //self.app.use("css", express.static('./iroomPage01.css'));
-    
-    
-    
-    
-    /*
-     fs.readFile('./iroomPage01.css', 'utf8', function (err,data) {
-        if (err) {
-            return console.log(err);
-        }
-        response.writeHead(200, {"Content-Type": "text/css"});
-        response.write(data);
-        response.end();
-    });
-    
-     fs.readFile('./iroomLogo.png', 'utf8', function (err,data) {
-        if (err) {
-            return console.log(err);
-        }
-        response.writeHead(200, {"Content-Type": "image/png"});
-        response.write(data);
-        response.end();
-    });
-    */
-    
-
- 
-    /*
-    var body =   
-    '<html>'+
-    '<head>'+
-    '<meta http-equiv="Content-Type" content="text/html; '+
-    'charset=UTF-8" />'+
-    '</head>'+
-    '<body>'+
-    '<form action="/upload" enctype="multipart/form-data" '+
-    'method="post">'+
-    '<input type="file" name="upload" multiple="multiple">'+
-    '<input type="submit" value="Upload file" />'+
-    '</form>'+
-    '</body>'+
-    '</html>';
-
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write(body);
-    response.end();
-    */
-
-
+/*
 function upload(response, request) {
   console.log("Request handler 'upload' was called.");
 
@@ -112,9 +54,10 @@ function upload(response, request) {
   });
 }
 
+
 function show(response) {
   console.log("Request handler 'show' was called.");
-  fs.readFile("/tmp/test.png", "binary", function(error, file) {
+  fs.readFile("./testImg.png", "binary", function(error, file) {
     if(error) {
       response.writeHead(500, {"Content-Type": "text/plain"});
       response.write(error + "\n");
@@ -126,9 +69,13 @@ function show(response) {
     }
   });
 }
+*/
+
+
 
 exports.iroomHTML = iroomHTML;
 exports.iroomCSS = iroomCSS;
 exports.iroomLOGO = iroomLOGO;
+
 //exports.upload = upload;
 //exports.show = show;

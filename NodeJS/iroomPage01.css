@@ -21,3 +21,6 @@ div1 { position:absolute; z-index:30; width:248.5px; height:140px; border:1px so
 #overlay8 { top:300px; left:878px; display:none; }
 #overlay9 { top:739px; left:254px; display: none; }
 
+
+
+#testImg { position:absolute; top:300px; left:500px; z-index:30; width:400px; height:200px; }
