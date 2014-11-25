@@ -1,0 +1,151 @@
+<html><head>
+
+<title>bg</title>
+    
+<style>
+    
+    body{ margin:0; padding:0; } /* to remove the top and left whitespace */        
+    html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+    canvas { display:block; } /* To remove the scrollbars */
+
+</style>
+</head>    
+
+    
+<body>
+<canvas id="myCanvas" width="1280" height="728"></canvas>
+    
+<script>
+
+    // generating canvas
+    var canvas = document.getElementById("myCanvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // yellow rect
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#FAD504";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // bg_lines
+    for(var i= 0; i < canvas.height; i+= 10){
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = '#EBC909';
+        ctx.stroke();
+    }
+    
+        
+    // polygon generator  
+    function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
+        if (sides < 3) return;
+        var a = (Math.PI * 2)/sides;
+        a = anticlockwise?-a:a;
+        ctx.save();
+        ctx.translate(x,y);
+        ctx.rotate(startAngle);
+        ctx.moveTo(radius,0);
+        for (var i = 1; i < sides; i++) {
+            ctx.lineTo(radius*Math.cos(a*i),radius*Math.sin(a*i));
+        }
+        ctx.closePath();
+        ctx.restore();
+    }
+    
+    
+    // making polygons
+    var x = 0;
+    var y = 0;
+    var radius = 100;
+    var numOfSides = 6;
+    
+    var heightOfTriangle = radius * Math.sqrt(3) / 2;
+    
+    // position_1
+    ctx.save();
+    ctx.translate(100, 500);
+    
+    // hexagon_1
+    ctx.beginPath();
+    polygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
+    ctx.fillStyle = '#000000';
+    ctx.fill();
+    ctx.strokeStyle = '#FFFFFF';
+    ctx.stroke();
+    // rect_1
+    ctx.fillStyle = '#B5B2A9';
+    ctx.fillRect(x-heightOfTriangle, y-radius/2, heightOfTriangle*2, radius);
+    // text_1
+    ctx.font = '30pt calibri';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'blue';
+    ctx.fillText('upload', x, y);
+    
+    ctx.restore();
+    
+    
+    // hexagon_2
+    ctx.save();
+    ctx.translate(500, 500);
+    ctx.beginPath();
+    polygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
+    ctx.fillStyle= '#000000';
+    ctx.fill();
+    ctx.strokeStyle = '#FFFFFF';
+    ctx.stroke();
+    ctx.restore();
+    
+    
+    // hexagon_3
+    ctx.save();
+    ctx.translate(1000, 500);
+    ctx.beginPath();
+    polygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
+    ctx.fillStyle= '#000000';
+    ctx.fill();
+    ctx.strokeStyle = '#FFFFFF';
+    ctx.stroke();
+    ctx.restore();
+    
+    
+    // hexagon_4
+    ctx.save();
+    ctx.translate(100, 100);
+    ctx.beginPath();
+    polygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
+    ctx.fillStyle= '#000000';
+    ctx.fill();
+    ctx.strokeStyle = '#FFFFFF';
+    ctx.stroke();
+    ctx.restore();
+    
+    
+    // hexagon_5
+    ctx.save();
+    ctx.translate(500, 200);
+    ctx.beginPath();
+    polygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
+    ctx.fillStyle= '#000000';
+    ctx.fill();
+    ctx.strokeStyle = '#FFFFFF';
+    ctx.stroke();
+    ctx.restore();
+    
+    
+    // hexagon_6
+    ctx.save();
+    ctx.translate(900, 50);
+    ctx.beginPath();
+    polygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
+    ctx.fillStyle= '#000000';
+    ctx.fill();
+    ctx.strokeStyle = '#FFFFFF';
+    ctx.stroke();
+    ctx.restore();
+ 
+</script>
+    
+    
+</body></html>

@@ -1,0 +1,21 @@
+body{ height:auto; min-height:100%; margin:0; padding:0; background-color:#996600; overflow:auto;} /* to remove the top and left whitespace */   
+img { position:absolute; top:30px; left:35px; z-index:30; width:168px; height:50px; }
+
+/* div { width: 100px; height: 100px; float: right; } */ /* display:none; */
+
+canvas { overflow:auto; position:relative; z-index:20;}
+div1 {  position:absolute; z-index:30; width:248.5px; height:140px; border:1px solid #FFFFFF; }
+
+#canvas-wrap { position:relative } /* Make this a positioned parent */
+
+#overlay1     { top:259px; left:118px; }
+#overlay2     { top:179px; left:395px; }
+#overlay3     { top:459px; left:325px; }
+
+#overlay4     { top:379px; left:601px; }
+#overlay5     { top:539px; left:48.5px; }
+#overlay6     { top:660px; left:532px; }
+
+#overlay7     { top:581px; left:808px; }
+#overlay8     { top:300px; left:878px; }
+#overlay9     { top:739px; left:254px; }

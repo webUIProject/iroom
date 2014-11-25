@@ -1,0 +1,86 @@
+body {
+    background-color:#996600;
+}
+img {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+/*canvas {
+    width: 220px;
+    height: 130px;
+    background:#4C3300;
+    position: relative;
+}*/
+
+div {
+    width: 210px;
+	height: 120px;
+    background:#FFFF94;
+    position: relative;
+    color: brown;
+    font-family: Arial;
+    font-size: 20px; 
+    font-weight: 90;
+    text-align: center;
+    /*outline: #63502B solid 3px;*/
+}
+div:before {
+	content: "";
+	position: absolute;
+	top: -60px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 105px solid transparent;
+	border-right: 105px solid transparent;
+	border-bottom: 60px solid #FFFF94;
+}
+div:after {
+	content: "";
+	position: absolute;
+	bottom: -60px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 105px solid transparent;
+	border-right: 105px solid transparent;
+	border-top: 60px solid #FFFF94;
+}
+
+
+#hexagon1_inside{
+    top: 230px;
+    left: 300px;
+}
+
+
+#hexagon1 {
+    top: 230px;
+    left: 300px;
+}
+#hexagon2 {
+    top: 175px;
+    left: 85px;
+}
+#hexagon3 {
+    top: -162px;
+    left: 136px;
+}
+#hexagon4 {
+    top: 87px;
+    left: 249px;
+}
+#hexagon5 {
+    top: -98px;
+    left: 464px;
+}
+#hexagon6 {
+    top: -435px;
+    left: 515px;
+    font-size: 25px;
+}
+#hexagon7 {
+    top: -402px;
+    left: 679px;
+}
