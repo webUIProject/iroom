@@ -1,0 +1,19 @@
+var server = require("./iroomServer01");
+var router = require("./iroomRouter01");
+var requestHandlers = require("./iroomRequestHandlers01");
+
+var handle = {}
+handle["/"] = requestHandlers.iroomHTML;
+handle["/iroomPage01.html"] = requestHandlers.iroomHTML;
+handle["/iroomPage01.css"] = requestHandlers.iroomCSS;
+handle["/iroomLogo.png"] = requestHandlers.iroomLOGO;
+
+
+
+//handle["/upload"] = requestHandlers.upload;
+handle["/show"] = requestHandlers.show;
+
+handle["/img1"] = requestHandlers.img1;
+
+
+server.start(router.route, handle);
