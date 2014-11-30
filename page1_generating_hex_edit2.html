@@ -10,8 +10,6 @@
        <link rel="stylesheet" href="page1_generating_hex_edit2.css">
    </head>    
    
-   
-   
    <body>
       <div id="canvas-wrap">
       
@@ -22,7 +20,7 @@
           <div1 id="overlay2">click2</div1>
           <div1 id="overlay3">click3</div1>
            
-           <div1 id="overlay10">click10</div1>
+          <div1 id="overlay10">click10</div1>
 
            <div1 id="overlay4">click4</div1>
            <div1 id="overlay5">click5</div1>
@@ -39,8 +37,10 @@
        
        
        
-       
     <script>
+        
+        function onLoadPage(){
+ 
         var canvas = document.getElementById("myCanvas");
         canvas.width = 1500;
         canvas.height = 1000;
@@ -211,7 +211,11 @@
         var element = document.getElementById("overlay10");
         element.addEventListener("click", deleteHexagon);
         */
-    
+        }
+        
+        onLoadPage();
+        
+        
        </script>
     </body>
 </html>

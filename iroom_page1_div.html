@@ -7,7 +7,7 @@
     
        <meta name="description" content="">
        <meta name="viewport" content="width=device-width">
-       <link rel="stylesheet" href="iroom_page1_1.css">
+       <link rel="stylesheet" href="iroom_page1_div.css">
    </head>    
    
    
@@ -60,7 +60,7 @@
         
         
         // Polygon Generator  
-        function polygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
+        function drawPolygon(ctx, x, y, radius, sides, startAngle, anticlockwise) {
             if (sides < 3) return;
         
             var a = (Math.PI * 2)/sides;
@@ -89,14 +89,14 @@
         
         
         //Hexagon Generator
-        function Hexagon(center_x, center_y, id){
+        function drawHexagon(center_x, center_y, id){
             // position
             ctx.save();
             ctx.translate(center_x, center_y);
         
             // hexagon
             ctx.beginPath();
-            polygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
+            drawPolygon(ctx, x, y, radius, numOfSides, -Math.PI/2);
             ctx.fillStyle = '#FFFF99';
             ctx.fill();
             ctx.strokeStyle = '#CFA653';
@@ -142,24 +142,53 @@
             
         }
     
-
-    
-        Hexagon(243, 330, 0);
-        Hexagon(520, 250, 1);
-        Hexagon(450, 530, 2);
         
-        Hexagon(727, 450, 3);
-        Hexagon(173, 610, 0);
-        Hexagon(657, 731, 0);
+        var hexagon_arr_default = [
+            
+            [243, 330, 0],//captain
+            [520, 250, 1],//goal
+            [450, 530, 2],//joining
         
-        Hexagon(934, 651, 0);
-        Hexagon(1004, 371, 3);
-        Hexagon(380, 810, 3);
-
-
-
-
-                
+        ];
+        
+        
+         
+        var hexagon_arr = [
+            
+            [727, 450, 3],
+            [173, 610, 0],
+            [657, 731, 0],
+        
+            [934, 651, 0],
+            [1004, 371, 3],
+            [380, 810, 3]
+        
+        ];
+        
+        
+        
+        
+        for(var i = 0; i < hexagon_arr_default.length; i++){
+            drawHexagon(hexagon_arr_default[i][0], hexagon_arr_default[i][1], hexagon_arr_default[i][2]);
+        }
+        
+        
+        
+        
+        var count = 0;            
+        function generateHexagon(){
+            
+            drawHexagon(hexagon_arr[count][0], hexagon_arr[count][1], hexagon_arr[count][2]);   
+            count++;
+            
+        }
+        
+        
+        
+        var element = document.getElementById("overlay3");
+        
+        element.addEventListener("click", generateHexagon);
+        
 
         
        </script>

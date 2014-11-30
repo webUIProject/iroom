@@ -32,8 +32,8 @@
         </div>
         
         <img src="./iroomLogo.png" alt="iroomLOGO">
-       
-       
+        
+        
     <script>
         function onLoadPage(){
             
@@ -182,12 +182,62 @@
             /*
             var element = document.getElementById("overlay10");
             element.addEventListener("click", deleteHexagon);
-            */
+            */           
         }
         
-        onLoadPage();        
         
+        
+        function sendXHR(url){
+            var request = new XMLHttpRequest();
+                
+            request.open("GET", url, true);
+            request.send(null);
+                
+            request.onreadystatechange = function(){
+                if(request.readyState == 4){
+                    result = request.responseText;
+                    result = JSON.parse(request.responseText);
+                    //var iroomTest = JSON.parse(request.responseText);
+                    //var iroomTest = JSON.stringify(request.responseText);
+                    
+                    alert(result.email);
+                
+                }
+            };
+        }
+        
+        
+    
+                   
+        
+        
+      
+        onLoadPage();
+        //sendXHR("http://codepen.io/nigayo/pen/EjbcK.js");
+        //sendXHR("http://localhost:1234/getImgData");
+        sendXHR("http://localhost:1234/getIroomData");   
+
+
                 
        </script>
+       
+       
+<!--
+       <script src="file://..\\test2.json"></script> 
+          <script>
+              function updateMe(){
+                  var x = 0;
+                  var activity=jsonstr;
+                  foreach (i in activity) {
+                      date = document.getElementById(i.date).innerHTML = activity.date;
+                      event = document.getElementById(i.event).innerHTML = activity.event;
+                  }
+                  alert(activity.date);
+              }
+              updateMe();
+       </script>  
+-->
+             
+           
     </body>
 </html>
