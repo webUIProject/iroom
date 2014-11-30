@@ -37,6 +37,8 @@ function iroomLOGO(response){
       });  
 }
 
+
+
 /*
 function getImgData(response) {
     console.log("Request handler 'getImgData' was called.");
@@ -60,12 +62,35 @@ function getIroomData(response) {
         }
         //response.writeHead(200, {"Content-Type": "text/html"});
         */    
-    var obj = {"name":"Huh Jae Yeon", "email":"lambb0127@naver.com"};    
+    var obj = {"img1":"./test.png", "img2":"./test2.png"};    
     response.writeHead(200, {"Content-Type": "application/json"});
     response.write(JSON.stringify(obj));
     //response.write("<br/>");
     response.end();
     //});
+}
+
+function imgPopUp(response){
+    console.log("Request handler 'imagePopUp' was called.");
+    fs.readFile('./test.png', "binary", function (err, file){
+        if (err) {
+            return console.log(err);
+        }
+        response.writeHead(200, {'Content-Type': 'image/png'});
+        response.write(file, "binary");
+        response.end();
+      });  
+}
+function imgPopUp2(response){
+    console.log("Request handler 'imagePopUp2' was called.");
+    fs.readFile('./test2.png', "binary", function (err, file){
+        if (err) {
+            return console.log(err);
+        }
+        response.writeHead(200, {'Content-Type': 'image/png'});
+        response.write(file, "binary");
+        response.end();
+      });  
 }
                 
 
@@ -120,6 +145,10 @@ exports.iroomLOGO = iroomLOGO;
 
 //exports.getImageData = getImgData;
 exports.getIroomData = getIroomData;
+exports.imgPopUp = imgPopUp;
+exports.imgPopUp2 = imgPopUp2;
+
+
 
 //exports.upload = upload;
 //exports.show = show;

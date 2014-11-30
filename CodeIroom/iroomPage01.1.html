@@ -152,7 +152,7 @@
             var cnt = 0;    
             
             function blockDiv(){
-                divNum = crtMemNum + 2;
+                var divNum = crtMemNum + 2;
                 if(document.getElementById("overlay"+divNum).style.display = "none"){
                     document.getElementById("overlay"+divNum).style.display = "block";
                     divNum++;
@@ -176,7 +176,7 @@
             function deleteHexagon(){}
             */
                 
-            var element = document.getElementById("overlay3");
+            var element = document.getElementById("overlay1");
             element.addEventListener("click", generateHexagon);
         
             /*
@@ -187,24 +187,47 @@
         
         
         
-        function sendXHR(url){
-            var request = new XMLHttpRequest();
+        
+        function ajaxData(){
+            
+            var divNumber = 3;
+            
+            function popUpImg(imgURL){
                 
-            request.open("GET", url, true);
-            request.send(null);
+                if(divNumber < 10){
+                    //document.getElementById("overlay"+divNumber).style.backgroundColor = "White";
+                    document.getElementById("overlay"+divNumber).style.backgroundImage = "url("+imgURL+")";
+                    document.getElementById("overlay"+divNumber).style.backgroundSize = "contain"
+                    divNumber ++;
+                };
+            }
+            
+        
+            function sendXHR(nodejsURL){
+                var request = new XMLHttpRequest();
                 
-            request.onreadystatechange = function(){
-                if(request.readyState == 4){
-                    result = request.responseText;
-                    result = JSON.parse(request.responseText);
-                    //var iroomTest = JSON.parse(request.responseText);
-                    //var iroomTest = JSON.stringify(request.responseText);
-                    
-                    alert(result.email);
+                request.open("GET", nodejsURL, true);
+                request.send(null);
                 
-                }
-            };
+                request.onreadystatechange = function(){
+                    if(request.readyState == 4){
+                        result = request.responseText;
+                        result = JSON.parse(request.responseText);
+                        //var iroomTest = JSON.parse(request.responseText);
+                        //var iroomTest = JSON.stringify(request.responseText);
+                        alert(result.img2); 
+
+                        popUpImg(result.img1);
+                        popUpImg(result.img2);
+                    }
+                };
+            }     
+            
+            
+            
+            sendXHR("http://localhost:1234/getIroomData");
         }
+        
         
         
     
@@ -213,9 +236,13 @@
         
       
         onLoadPage();
+        ajaxData();
+
         //sendXHR("http://codepen.io/nigayo/pen/EjbcK.js");
         //sendXHR("http://localhost:1234/getImgData");
-        sendXHR("http://localhost:1234/getIroomData");   
+          
+
+        
 
 
                 

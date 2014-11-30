@@ -1,0 +1,79 @@
+    
+    //jsonstr = [ {"date":"July 4th", "event":"Independence Day"} ];
+
+    /*
+    user = {
+        username: 'Hun Jae Yeon',
+        email: 'lambb0127@naver.com',
+        firstName: 'Jae Yeon',
+        lastName: 'Huh'
+    };
+    */
+
+    var userString = [ {"name":"Huh Jae Yeon", "email":"lambb0127@naver.com"} ];
+
+
+    /*
+    var userString = JSON.stringify(user);
+    var headers = {
+        'Content-Type': 'application/json',
+        'Content-Length': userString.length
+    };
+    var options = {
+        host: 'http://localhost:1234/getIroomData',
+        port: 80,
+        path: './test2.json',
+        method: 'POST',
+        headers: headers
+    };
+    */
+
+
+
+    
+
+
+
+
+    /*
+    var otherArray = ["iroomTest1", "iroomTest2"];
+    var otherObject = { item1: "iroomTest1val", item2: "iroomTest2val" };
+    
+    var json = JSON.stringify({ 
+        anObject: otherObject, 
+        anArray: otherArray, 
+        another: "iroomTest"
+    });
+    */
+    
+   
+    
+    
+    /*
+    // Setup the request.  The options parameter is
+    // the object we defined above.
+
+    var req = http.request(options, function(res) {
+        res.setEncoding('utf-8');
+
+        var responseString = '';
+        res.on('data', function(data) {
+            responseString += data;
+        });
+        res.on('end', function() {
+            var resultObject = JSON.parse(responseString);
+        });
+    });
+
+    req.on('error', function(e) {
+    // TODO: handle error.
+    });
+
+    req.write(userString);
+    req.end();
+
+    
+    
+</script>
+*/
+
