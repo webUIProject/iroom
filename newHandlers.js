@@ -44,6 +44,7 @@ function iroomLOGO(response){
 <<<<<<< HEAD
 
 
+<<<<<<< HEAD:NodeJS/iroomRequestHandlers01.js
 /*
 function getImgData(response) {
     console.log("Request handler 'getImgData' was called.");
@@ -105,6 +106,8 @@ function imgPopUp2(response){
 =======
 >>>>>>> 1dbca077a8929ae8eae02a4ef45a34485783c7c0
 
+=======
+>>>>>>> 1dbca077a8929ae8eae02a4ef45a34485783c7c0:newHandlers.js
 function upload(response, request) {
   console.log("Request handler 'upload' was called.");
 
@@ -144,11 +147,16 @@ function show(response) {
 }
 
 function img1(response){
+<<<<<<< HEAD:NodeJS/iroomRequestHandlers01.js
+=======
+        
+>>>>>>> 1dbca077a8929ae8eae02a4ef45a34485783c7c0:newHandlers.js
     console.log("Request handler 'img1' was called.")
     fs.readFile('./Desert.jpg', "binary", function (err, file) {
         if (err) {
             return console.log(err);
         }
+<<<<<<< HEAD:NodeJS/iroomRequestHandlers01.js
         response.writeHead(200, {'Content-Type': 'image/jpg'});
         response.write(file, "binary");
         
@@ -156,6 +164,15 @@ function img1(response){
         //response.writeHead(200, {"Content-Type": "text/html"});
         //response.write(JSON.stringify("<img src='/img1'/"));
         //response.write("<img src='/img1'/");
+=======
+      
+        var obj = {"url": "http://localhost:1234/img1", "image": file};
+        
+        //response.writeHead(200, {"Content-Type": "image/jpg"});
+        
+        response.write(JSON.stringify(obj));
+        //response.write(obj.image, "binary");
+>>>>>>> 1dbca077a8929ae8eae02a4ef45a34485783c7c0:newHandlers.js
         
         response.end();
         
@@ -166,6 +183,7 @@ function img1(response){
 exports.iroomHTML = iroomHTML;
 exports.iroomCSS = iroomCSS;
 exports.iroomLOGO = iroomLOGO;
+<<<<<<< HEAD:NodeJS/iroomRequestHandlers01.js
 <<<<<<< HEAD
 
 //exports.getImageData = getImgData;
@@ -181,3 +199,7 @@ exports.imgPopUp2 = imgPopUp2;
 exports.show = show;
 exports.img1 = img1;
 >>>>>>> 1dbca077a8929ae8eae02a4ef45a34485783c7c0
+=======
+exports.show = show;
+exports.img1 = img1;
+>>>>>>> 1dbca077a8929ae8eae02a4ef45a34485783c7c0:newHandlers.js

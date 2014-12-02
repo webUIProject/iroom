@@ -8,7 +8,7 @@ div1 {  position:absolute; z-index:30; width:248.5px; height:140px; border:1px s
 
 #canvas-wrap { position:relative } /* Make this a positioned parent */
 
-#overlay1     { top:259px; left:118px; }
+#overlay1     { top:259px; left:118px; display: none;}
 #overlay2     { top:179px; left:395px; }
 #overlay3     { top:459px; left:325px; }
 
