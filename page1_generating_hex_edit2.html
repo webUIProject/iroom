@@ -41,6 +41,9 @@
        
        
     <script>
+        function onLoadPage(){
+        
+        
         var canvas = document.getElementById("myCanvas");
         canvas.width = 1500;
         canvas.height = 1000;
@@ -153,25 +156,16 @@
             [380, 810, 4]        
         ];        
         
-        /*
-        var div_arr_basic = [
-            [259, 118],
-            [179, 395],
-            [459, 325]
-        ]
-        */
-               
-           
         
-
         // Drawing basic three hexagons
         for(var i = 0; i < hexagon_arr_basic.length; i++){
             drawHexagon(hexagon_arr_basic[i][0], hexagon_arr_basic[i][1], hexagon_arr_basic[i][2]);
         }
         
+        
         // Generate a certain order of hexagon
         var crtMemNum = 1; //현재 그룹에 참여한 사람 수
-        var maxMemNum = 6; //set by 방장
+        var maxMemNum = 7; //set by 방장
         var cnt = 0;    
         
         function blockDiv(){
@@ -207,11 +201,16 @@
         element.addEventListener("click", generateHexagon);
         
         
+        
         /*
         var element = document.getElementById("overlay10");
         element.addEventListener("click", deleteHexagon);
         */
     
+        }
+        
+        onLoadPage();
+            
        </script>
     </body>
 </html>
